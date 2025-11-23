@@ -1,8 +1,10 @@
+import './Cabecalho.css';
+
 function Cabecalho() {
   return (
-    <header>
+    <header className="cabecalho">
       <h1>Gerenciador de Tarefas</h1>
-      <p>Organize suas tarefas de forma eficiente as tarefas  de sua equipe</p>
+      <p>Organize as tarefas  de sua equipe de forma eficiente</p>
 
       <button>+ Nova Tarefa</button>
     </header>
