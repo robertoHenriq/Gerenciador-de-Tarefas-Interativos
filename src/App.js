@@ -1,3 +1,4 @@
+import Botao from './componentes/BotaoDeTrocaDeFuncao/Botao';
 import Cabecalho from './componentes/Cabecalho/Cabecalho';
 import PainelDeTarefas from './PainelTarefas/PainelDeTarefas';
 
@@ -6,6 +7,7 @@ function App() {
     
     <div className="App">
       <Cabecalho />
+      <Botao />
       <PainelDeTarefas />
     </div>
   );
