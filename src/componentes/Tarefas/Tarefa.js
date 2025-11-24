@@ -2,7 +2,9 @@ import './Tarefa.css';
 
 function Tarefa() {
   return (
+
     <main className="tarefa">
+
     <div className="titulo">
       <h2>Titulo</h2> 
       <div className="Prioridade">
