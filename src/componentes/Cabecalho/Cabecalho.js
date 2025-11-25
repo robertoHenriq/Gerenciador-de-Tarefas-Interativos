@@ -6,7 +6,7 @@ function Cabecalho() {
       <h1>Gerenciador de Tarefas</h1>
       <p>Organize as tarefas  de sua equipe de forma eficiente</p>
 
-      <button>+ Nova Tarefa</button>
+      <button className='botaoNovaTarefa'>+ Nova Tarefa</button>
     </header>
   );
 }

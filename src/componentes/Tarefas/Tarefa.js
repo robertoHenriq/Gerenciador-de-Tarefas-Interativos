@@ -1,6 +1,6 @@
 import './Tarefa.css';
 
-function Tarefa() {
+const Tarefa = () => {
   return (
 
     <main className="tarefa">

@@ -1,6 +1,20 @@
 .botoesDeTrocaDeFuncao {
     display: flex;
     justify-content: left;
-    padding:60px;
+    padding: 70px;
+    padding-left: 0;
+    margin-left: 7%;
+    margin-right: 100%;
+    margin-top: -60px;
+}
+
+.botaoDeQuadros .botaoDeLista .botaoDeDashboard {
+    background-color: aliceblue;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    float: right;
+    margin-top: -5%;
+    margin-right: 3%;
 }
 

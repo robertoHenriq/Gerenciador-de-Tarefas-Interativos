@@ -1,0 +1,32 @@
+.painelDeTarefas {
+  padding: 0px;
+  border-radius: 8px;
+  margin: 0 auto; 
+  width: 90%; /* Define uma largura máxima para o bloco, ex: 90% */
+  max-width: 1200px;
+  margin-top: -60px;
+  margin-left: 3%;
+  margin-left: 3;
+}
+
+.coluna1, .coluna2, .coluna3, .coluna4 {
+  background-color: gray;
+  width: 20%;
+  float: left;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.tarefa{
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.status {
+    font-size: 10px;
+    font-weight: bold;      
+    padding: auto;  
+}

@@ -3,9 +3,9 @@ import './Botao.css';
 const Botao = () => {
     return(
         <div className="botoesDeTrocaDeFuncao">
-        <button className="Botão de quadros">Quadros</button>
-        <button className="Botão de lista">Lista</button>
-        <button className="Botão de dashboard">Dashboard</button>
+        <button className="botaoDeQuadros">Quadros</button>
+        <button className="botaoDeLista">Lista</button>
+        <button className="botaoDeDashboard">Dashboard</button>
         </div>
     );
 }
