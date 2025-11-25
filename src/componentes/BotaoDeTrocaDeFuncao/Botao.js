@@ -1,13 +1,14 @@
+
 import './Botao.css';
 
-const Botao = () => {
-    return(
-        <div className="botoesDeTrocaDeFuncao">
-        <button className="botaoDeQuadros">Quadros</button>
-        <button className="botaoDeLista">Lista</button>
-        <button className="botaoDeDashboard">Dashboard</button>
-        </div>
-    );
+const Botao = ({ onChangeView }) => {
+  return (
+    <div className="botoesDeTrocaDeFuncao">
+      <button onClick={() => onChangeView('painel')} className="botaoDeQuadros">Quadros</button>
+      <button onClick={() => onChangeView('lista')} className="botaoDeLista">Lista</button>
+      <button onClick={() => onChangeView('dashboard')} className="botaoDeDashboard">Dashboard</button>
+    </div>
+  );
 }
 
-export default Botao
+export default Botao;

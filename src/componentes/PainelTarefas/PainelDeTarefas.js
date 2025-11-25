@@ -9,6 +9,7 @@ const PainelDeTarefas = () => {
                 <p className='status'>A Fazer</p>
                 <div className="Tarefa">
                 <Tarefa />
+                <Tarefa />
                 </div>
         </section>
         <section className="coluna2">

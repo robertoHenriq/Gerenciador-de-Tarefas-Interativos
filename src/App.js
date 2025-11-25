@@ -1,16 +1,23 @@
 import Botao from './componentes/BotaoDeTrocaDeFuncao/Botao';
-import Cabecalho from './componentes/Cabecalho/Cabecalho';
 import PainelDeTarefas from './componentes/PainelTarefas/PainelDeTarefas';
+import ListaDeTarefas from './componentes/ListaDeTarefas/ListaDeTarefas';
+import Cabecalho from './componentes/Cabecalho/Cabecalho';
+import React, { useState } from 'react';  
+import Dashboard from './componentes/DashBoard/DashBoard';
 
-function App() {
+const App = () => {
+  const [view, setView] = useState('painel');
+
   return (
-    
-    <div className="App">
+    <div>
       <Cabecalho />
-      <Botao />
-      <PainelDeTarefas />
+      <Botao onChangeView={setView} />
+      {view === 'painel' && <PainelDeTarefas />}
+      {view === 'lista' && <ListaDeTarefas />}
+      {view === 'dashboard' && <Dashboard />}
     </div>
   );
 }
 
 export default App;
+// ...existing code...
