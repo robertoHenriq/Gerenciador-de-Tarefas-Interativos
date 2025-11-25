@@ -1,0 +1,4 @@
+.TarefasDeLista {
+  display: flex;
+  max-height: 100%;
+}

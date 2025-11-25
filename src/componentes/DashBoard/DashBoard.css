@@ -1,0 +1,21 @@
+.DashBoard {
+    
+  border-radius: 8px;
+  display: flex;
+  margin: 0 auto; 
+  max-width: 1200px;
+  margin-top: -60px;
+  margin-left: 3%;
+  margin-left: 3;
+  padding: 0px;
+  width: 90%; /* Define uma largura máxima para o bloco, ex: 90% */
+  
+}
+
+.colunaDashboard1, .colunaDashBoard2, .colunaDashBoard3, .colunaDashBoard4 {
+    background-color: gray;
+  width: 20%;
+  float: left;
+  margin-left: 5%;
+}
+

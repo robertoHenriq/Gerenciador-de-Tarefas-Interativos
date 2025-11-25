@@ -1,7 +1,10 @@
+import Tarefa from "../Tarefas/Tarefa";
+
 const ListaDeTarefas = () => {
   return (
-    <div>
-      <h1>Lista de Tarefas</h1>
+    <div className="TarefasDeLista">
+      <p>Todas as Tarefas</p>
+      <Tarefa />
     </div>
   );
 }
