@@ -1,6 +1,7 @@
 import './Tarefa.css';
 
-const Tarefa = () => {
+const Tarefa = ({ titulo, descricao, prioridade,time, colaborador, data }) => {
+
   return (
 
     <main className="tarefa">

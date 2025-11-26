@@ -9,13 +9,34 @@ import Formulario from './componentes/Formulario/Formulario';
 const App = () => {
   const [view, setView] = useState('painel');
 
+  const [task, setTask] = useState([]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleAddTask = (newTask) => {
+    const newId = task.leght +1;
+    const taskWithId = { id: newId, ...newTask};
+
+    setTask([...task, taskWithId]);
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
-      <Cabecalho onChangeView={setView} />
-      <Botao onChangeView={setView} />
-      {view === 'Formulario' && <Formulario onClose={() => setView('painel')} />}
-      {view === 'painel' && <PainelDeTarefas />}
-      {view === 'lista' && <ListaDeTarefas />}
+      <Cabecalho 
+                onChangeView={setView} 
+                onOpenModal={() => setIsModalOpen(true)} // Prop para o botão no cabeçalho
+            />
+            
+            {/* Renderização condicional do Formulário como Modal */}
+            {isModalOpen && (
+                <Formulario 
+                    onclose={() => setIsModalOpen(false)} 
+                    onAddTask={handleAddTask} // Passa a função de adição de tarefas
+                />
+            )}
+      {view === 'painel' && <PainelDeTarefas task={task}/>}
+      {view === 'lista' && <ListaDeTarefas task={task}/>}
       {view === 'dashboard' && <Dashboard />}
     </div>
   );
