@@ -6,7 +6,7 @@ const ListaDeTarefas = ({ tarefas, titulo }) => {
       (tarefas.length > 0) ? <section>
                                 <h3>{titulo}</h3>
                                 <div className='colaboradores'>
-                                    {tarefas.map( Tarefa => <Tarefa key={Tarefa.titulo} titulo={Tarefa.titulo} /> )}
+                                    {tarefas.map( tarefa => <Tarefa key={Tarefa.titulo} titulo={Tarefa.titulo} /> )}
                                 </div>
                             </section> 
     :''
