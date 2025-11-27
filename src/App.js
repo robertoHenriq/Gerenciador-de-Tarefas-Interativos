@@ -20,7 +20,7 @@ const App = () => {
       <Cabecalho onChangeView={setView} onClick='CadastrarTarefa' />
       <Botao onChangeView={setView} />
       {view === 'CadastrarTarefa' && <Formulario aoTarefaCadastrada={Tarefa => aoNovaTarefaAdicionada(Tarefa)}  />}
-      {view === 'lista' && (Tarefas.map(lista => (<ListaDeTarefas titulo={lista.titulo} tarefas={Tarefas.filter(t => t.ListaDeTarefas === ListaDeTarefas.titulo)} />)))}
+      {view === 'lista' && (Tarefas.map(lista => (<ListaDeTarefas titulo={lista.titulo}  tarefas={Tarefas.filter(t => t.ListaDeTarefas === ListaDeTarefas.titulo)} />)))}
       {view === 'dashboard' && <Dashboard />}
     </div>
   );

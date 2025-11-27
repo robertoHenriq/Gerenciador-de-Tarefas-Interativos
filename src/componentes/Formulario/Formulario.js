@@ -32,15 +32,49 @@ const Formulario = ({ aoTarefaCadastrada }) => {
     return (
         <section className="formulario">
             <form onSubmit={aoSalvar}>
-                <CampoTexto
-                obrigatorio={true}
-                label="Titulo"
-                placeholder={'Digite o titulo da tarefa'}
-                valor={titulo}
-                aoAlterando={valor => setTitulo(valor)}
-                />
+  <CampoTexto
+    obrigatorio={true}
+    label="Título"
+    placeholder="Digite o título da tarefa"
+    valor={titulo}
+    aoAlterando={valor => setTitulo(valor)}
+  />
 
-            </form>
+  <CampoTexto
+    obrigatorio={true}
+    label="Prioridade"
+    placeholder="Digite a prioridade"
+    valor={prioridade}
+    aoAlterando={valor => setPrioridade(valor)}
+  />
+
+  <CampoTexto
+    label="Descrição"
+    valor={descricao}
+    aoAlterando={setDescricao}
+  />
+
+  <CampoTexto
+    label="Time"
+    valor={time}
+    aoAlterando={setTime}
+  />
+
+  <CampoTexto
+    label="Responsável"
+    valor={responsavel}
+    aoAlterando={setResponsavel}
+  />
+
+  <CampoTexto
+    label="Prazo"
+    valor={limite}
+    aoAlterando={setLimite}
+  />
+
+  <button>Salvar Tarefa</button>
+</form>
+
         </section>
     );
     }
