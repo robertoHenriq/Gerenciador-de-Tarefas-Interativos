@@ -1,76 +1,47 @@
-import React, { useState} from "react";
+import CampoTexto from "../CampoTexto/CampoTexto";
+import { useState } from "react";
 
-const Formulario = ({ onclose, onAddTask}) => {
+const Formulario = ({ aoTarefaCadastrada }) => {
 
-    const [ dadosFormulario, setDadosFormulario ] = useState({
-        titulo: '',
-        descricao: '',
-        prioridade: 'Baixa',
-        time: 'Front-End',
-        colaborador: 'José Roberto',
-        data: '10/01/2026'
-  });
+    const [titulo, setTitulo] = useState('')
+    const [prioridade, setPrioridade] = useState('')
+    const [descricao, setDescricao] = useState('')
+    const [time, setTime] = useState('')
+    const [responsavel, setResponsavel] = useState('')
+    const [limite, setLimite] = useState('')
 
-  const handleChange = (e) =>{
-    const {name, value} =e.target;
-    setDadosFormulario(prevData => ({
-        ...prevData,
-        [name]: value,
-    }));
-  };
+    const aoSalvar = (evento) => {
+        evento.preventDefault()
+        aoTarefaCadastrada({
+            titulo,
+            prioridade,
+            descricao,
+            time,
+            responsavel,
+            limite
+        })
+        setTitulo('')
+        setPrioridade('')
+        setDescricao('')
+        setTime('')
+        setResponsavel('')
+        setLimite('')
+    }
 
-  //Metódo para enviar o formulário se a página atualizar- Feito por IA
-  const handleSubmit = (e) =>{
-    e.preventDefault();
-
-    ondAddTask(dadosFormulario);
-
-    onclose();
-  }
 
     return (
-        <div className="overlay" onClick={onclose}>
-            <div className="modal" onClick={e => e.stopPropagation()}> 
-            <h2>Formulario</h2> 
-            </div>
-            <form onSubmit={handleSubmit}>
-                <label>Título:</label>
-                <input type="text"
-                       name="titulo"
-                       value={dadosFormulario.titulo}
-                       onChange={handleChange}
-                 />
-                       
-                <label>Descrição:</label>
-                <textarea name="descricao">
-                          value={dadosFormulario.descricao}
-                          onChange={handleChange}      
-                </textarea>
+        <section className="formulario">
+            <form onSubmit={aoSalvar}>
+                <CampoTexto
+                obrigatorio={true}
+                label="Titulo"
+                placeholder={'Digite o titulo da tarefa'}
+                valor={titulo}
+                aoAlterando={valor => setTitulo(valor)}
+                />
 
-                <label>Prioridade:</label>
-                <select name="prioridade"
-                        value={dadosFormulario.prioridade}
-                        onChange={handleChange}
-                >
-                    <option>Baixa</option>
-                    <option>Média</option>
-                    <option>Alta</option>
-                </select>
-
-                <label>Time:</label>
-                <select name="time"
-                        value={dadosFormulario.time}
-                        onChange={handleChange}
-
-                >
-                    <option>Front-End</option>
-                    <option>Back-End</option>
-                    <option>Design</option>
-                    <option>Website</option>
-                </select>
-                <button type="submit">Adicionar Tarefa</button>
             </form>
-        </div>
+        </section>
     );
-}
-export default Formulario;
+    }
+    export default Formulario;

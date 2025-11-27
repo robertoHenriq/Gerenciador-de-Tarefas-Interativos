@@ -1,11 +1,16 @@
-import Tarefa from "../Tarefas/Tarefa";
+import Tarefa from "../Tarefa/Tarefa";
 
-const ListaDeTarefas = () => {
+const ListaDeTarefas = ({ tarefas, titulo }) => {
   return (
-    <div className="TarefasDeLista">
-      <p>Todas as Tarefas</p>
-      <Tarefa />
-    </div>
-  );
+
+      (tarefas.length > 0) ? <section>
+                                <h3>{titulo}</h3>
+                                <div className='colaboradores'>
+                                    {tarefas.map( Tarefa => <Tarefa key={Tarefa.titulo} titulo={Tarefa.titulo} /> )}
+                                </div>
+                            </section> 
+    :''
+  
+  )
 }
 export default ListaDeTarefas;
