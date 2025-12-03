@@ -4,10 +4,10 @@ import Cabecalho from './componentes/Cabecalho/Cabecalho';
 import React, { useState } from 'react';  
 import Dashboard from './componentes/DashBoard/DashBoard';
 import Formulario from './componentes/Formulario/Formulario';
-import Tarefa from './componentes/Tarefa/Tarefa';
+import Quadros from './componentes/Quadro';
 
 const App = () => {
-  const [view, setView] = useState('lista')
+  const [view, setView] = useState('')
   const [Tarefas, setTarefa] = useState([])
 
   const aoNovaTarefaAdicionada = (Tarefa) => {
@@ -22,6 +22,10 @@ const App = () => {
       {view === 'CadastrarTarefa' && <Formulario aoTarefaCadastrada={Tarefa => aoNovaTarefaAdicionada(Tarefa)}  />}
       {view === 'lista' && (Tarefas.map(lista => (<ListaDeTarefas titulo={lista.titulo}  tarefas={Tarefas.filter(t => t.ListaDeTarefas === ListaDeTarefas.titulo)} />)))}
       {view === 'dashboard' && <Dashboard />}
+      {view === 'quadro' && (Tarefas.map(
+        lista => (<Quadros titulo={lista.titulo} 
+        tarefas={Tarefas.filter(t => 
+        t.ListaDeTarefas === ListaDeTarefas.titulo)}/>)))}
     </div>
   );
 }
